@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Chat = require("../models/chat");
 
-// Getting all
+// Get all chats
 router.get("/", async (req, res) => {
     try {
         const chats = await Chat.find();
@@ -12,12 +12,12 @@ router.get("/", async (req, res) => {
     }
 })
 
-// GET CHAT HISTORY FROM DB
+// Get chat from DB
 router.get("/:channelId", getChatByChannelId, async (req, res) => {
     res.json(res.chat)
 })
 
-// CREATE A NEW CHAT IN DB
+// Create a new chat in DB
 router.post("/", async (req, res) => {
     const { channelId, chatHistory } = req.body;
 
@@ -34,7 +34,7 @@ router.post("/", async (req, res) => {
     }
 })
 
-// UPDATE CHAT HISTORY
+// Update chat history
 router.patch("/:channelId", getChatByChannelId, async (req, res) => {
     if (req.body.channelId != null) {
         res.chat.channelId = req.body.channelId;
