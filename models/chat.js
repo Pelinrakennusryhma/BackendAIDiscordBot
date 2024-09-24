@@ -17,22 +17,3 @@ const ChatSchema = new mongoose.Schema({
 ChatSchema.index({ channelId: 1 });
 
 module.exports = mongoose.model('Chat', ChatSchema);
-
-
-/*
-* {
-    name: {
-        type: String,
-        required: true,
-    },
-    subscribedToChannel: {
-        type: String,
-        required: true,
-
-    },
-    subscribeDate: {
-        type: Date,
-        required: true,
-        default: Date.now()
-    },
-}*/
