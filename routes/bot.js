@@ -1,6 +1,5 @@
 const express = require("express");
 const Bot = require("../models/bot");
-const Chat = require("../models/chat");
 const router = express.Router();
 
 
@@ -14,7 +13,7 @@ router.get("/", async (req, res) => {
     }
 })
 
-// CREATE A NEW CHAT IN DB
+// Create bot personality
 router.post("/", async (req, res) => {
     const { botPersonality } = req.body;
 
